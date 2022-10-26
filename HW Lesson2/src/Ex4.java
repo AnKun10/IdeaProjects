@@ -23,7 +23,7 @@ public class Ex4 {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter birthday: ");
         date = input.nextLine();
-        
+
 
     }
 }

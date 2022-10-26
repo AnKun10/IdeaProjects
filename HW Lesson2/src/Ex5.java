@@ -15,12 +15,12 @@ public class Ex5 {
         System.out.print("Letter you want to find in the text: ");
         letter = input.next().charAt(0);
         System.out.printf("The 1st appearance of the %s is at the index %s", letter, text.indexOf(letter));
-        System.out.printf("\nThe 2nd appearance of the %s is at the index %s", letter, text.lastIndexOf(letter));
+        System.out.printf("\nThe 2nd appearance of the %s is at the index %s\n", letter, text.lastIndexOf(letter));
 
         //Part b
         String s, s1, s2;
-
-        System.out.println("\nWrite something: ");
+        input.nextLine();
+        System.out.print("\nWrite something: ");
         s = input.nextLine();
         System.out.print("Characters you want to replace in the text: ");
         s1 = input.nextLine();
