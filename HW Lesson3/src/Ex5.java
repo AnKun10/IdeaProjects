@@ -8,14 +8,14 @@ public class Ex5 {
         System.out.print("Enter a number: ");
         int number = new Scanner(System.in).nextInt();
         int temp = number, process_number = 0;
-        while (number !=0){
-            process_number = process_number*10+number%10;
-            number/=10;
+        while (number != 0) {
+            process_number = process_number * 10 + number % 10;
+            number /= 10;
         }
-        if (process_number == temp){
-            System.out.println(temp+" is a reversible number");
+        if (process_number == temp) {
+            System.out.println(temp + " is a reversible number");
             return;
         }
-        System.out.println(temp+" isn't a reversible number");
+        System.out.println(temp + " isn't a reversible number");
     }
 }

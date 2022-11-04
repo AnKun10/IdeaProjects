@@ -12,9 +12,9 @@ public class Ex3 {
     public static int[] arr() {
         System.out.print("Enter n = ");
         int n = new Scanner(System.in).nextInt();
-        int[] arr =new int[n];
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            System.out.print("arr["+i+"] = ");
+            System.out.print("arr[" + i + "] = ");
             arr[i] = new Scanner(System.in).nextInt();
         }
         return arr;
@@ -22,8 +22,8 @@ public class Ex3 {
 
     public static void bubble_sort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 1; j < arr.length; j++) {
-                if (arr[j] < arr[j - 1]){
+            for (int j = 1; j < arr.length - i; j++) {
+                if (arr[j] < arr[j - 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j - 1];
                     arr[j - 1] = temp;
