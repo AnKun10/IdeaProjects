@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class Ex20 {
     public static void main(String[] args) {
         int[] arr = arr_input();
-        quicksort(arr, 0 , arr.length -1);
+        quicksort(arr);
         System.out.println("The array (after sorting) is "+ Arrays.toString(arr));
         arr = AddElement(arr);
-        quicksort(arr,0,arr.length-1);
+        quicksort(arr);
         System.out.println("The updated array (after sorting) is "+Arrays.toString(arr));
     }
 
@@ -35,9 +35,9 @@ public class Ex20 {
         return arr;
     }
 
-//    public static void quicksort(int[] arr) {
-//        quicksort(arr, 0, arr.length - 1);
-//    }
+    public static void quicksort(int[] arr) {
+        quicksort(arr, 0, arr.length - 1);
+    }
 
     public static void quicksort(int[] arr, int LowIndex, int HighIndex) {
         int pivot = arr[HighIndex];
