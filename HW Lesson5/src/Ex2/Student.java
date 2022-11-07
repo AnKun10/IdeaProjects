@@ -8,6 +8,7 @@ public class Student {
     public String Class;
     public String AcademicYear;
 
+    //Students List Method
     @Override
     public String toString() {
         return "Student{" +
@@ -17,7 +18,6 @@ public class Student {
                 ", AcademicYear='" + AcademicYear + '\'' +
                 '}';
     }
-
     public void information(){
         System.out.print("Enter Id: ");
         this.Id = new Scanner(System.in).nextLine();
@@ -28,7 +28,6 @@ public class Student {
         System.out.print("Enter Academic Year: ");
         this.AcademicYear = new Scanner(System.in).nextLine();
     }
-
     public Student[] list(){
         System.out.print("Enter number of students:");
         int numbers = new Scanner(System.in).nextInt();
@@ -40,14 +39,39 @@ public class Student {
         }
         return students;
     }
-
     public void print(Student[] students){
         for (int i = 0; i < students.length; i++) {
             System.out.println((i+1)+": "+students[i]);
         }
     }
 
+//    Sorting Method
     public void sortName(Student[] students){
-
+        sortName(students, 0, students.length-1);
+    }
+    public void sortName(Student[] students, int LowIndex, int HighIndex){
+        String pivot = students[HighIndex].Name;
+        int RightPointer = HighIndex;
+        int LeftPointer = LowIndex;
+        if (LeftPointer >= RightPointer){
+            return;
+        }
+        while (LeftPointer < RightPointer){
+            while ((students[LeftPointer].Name).compareTo(pivot) <= 0 && LeftPointer < RightPointer){
+                LeftPointer++;
+            }
+            while ((students[RightPointer].Name).compareTo(pivot) >= 0 && LeftPointer < RightPointer){
+                RightPointer--;
+            }
+            swap(students, LeftPointer, RightPointer);
+        }
+        swap(students,LeftPointer, HighIndex);
+        sortName(students, LowIndex, LeftPointer-1);
+        sortName(students, LeftPointer+1, HighIndex);
+    }
+    public void swap(Student[] students, int index1, int index2){
+        Student temp = students[index1];
+        students[index1] = students[index2];
+        students[index2] = temp;
     }
 }

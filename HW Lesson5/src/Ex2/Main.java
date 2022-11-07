@@ -1,7 +1,5 @@
 package Ex2;
 
-import Ex1.Student;
-
 //Bài 2: Sử dụng lớp sinh viên trong bài 1, nhập vào danh sách n sinh viên và thực hiện:
 //a. In toàn bộ danh sách ra màn hình
 //b. Sắp xếp danh sách theo tên sinh viên
@@ -13,6 +11,7 @@ public class Main {
         //Part a
         students.print(studentsList);
         //Part b
-
+        students.sortName(studentsList,0, studentsList.length-1);
+        students.print(studentsList);
     }
 }
