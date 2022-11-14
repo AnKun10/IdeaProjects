@@ -73,10 +73,22 @@ public class Product implements Inputable {
     public void infoInput() {
         System.out.print("Enter name: ");
         this.name = new Scanner(System.in).next();
-        System.out.print("Enter price: ");
-        this.price = new Scanner(System.in).nextInt();
-        System.out.print("Enter quantity: ");
-        this.quantity = new Scanner(System.in).nextInt();
+        do {
+            System.out.print("Enter price: ");
+            this.price = new Scanner(System.in).nextInt();
+            if (price >= 0) {
+                break;
+            }
+            System.out.println("Invalid input, please try again!");
+        } while (true);
+        do {
+            System.out.print("Enter quantity: ");
+            this.quantity = new Scanner(System.in).nextInt();
+            if (quantity > 0) {
+                break;
+            }
+            System.out.println("Invalid input, please try again!");
+        } while (true);
         System.out.println("###");
         System.out.println("Product type:");
         System.out.println("1, ELECTRONICS");
