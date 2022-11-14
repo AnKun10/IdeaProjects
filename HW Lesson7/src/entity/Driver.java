@@ -1,7 +1,6 @@
 package entity;
 
 import constant.DriverLevelConstant;
-import sun.management.snmp.jvmmib.JvmRTInputArgsTableMeta;
 
 import java.util.Scanner;
 
@@ -9,12 +8,6 @@ public class Driver extends Person {
     private int id;
     private String level;
     private int AUTO_ID = 9999;
-
-
-    public Driver() {
-        AUTO_ID++;
-        this.id = AUTO_ID;
-    }
 
     public int getId() {
         return id;
@@ -45,6 +38,8 @@ public class Driver extends Person {
 
     @Override
     public void inputInfo() {
+        AUTO_ID++;
+        this.id = AUTO_ID;
         super.inputInfo();
         System.out.println("###");
         System.out.println("Driver level:");

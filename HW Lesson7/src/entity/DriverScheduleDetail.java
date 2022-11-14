@@ -1,8 +1,13 @@
 package entity;
 
-public class DriverRouteScheduleDetail {
+public class DriverScheduleDetail {
     private Route route;
     private int round;
+
+    public DriverScheduleDetail(Route route, int round) {
+        this.route = route;
+        this.round = round;
+    }
 
     public Route getRoute() {
         return route;
@@ -22,7 +27,7 @@ public class DriverRouteScheduleDetail {
 
     @Override
     public String toString() {
-        return "DriverRouteScheduleDetail{" +
+        return "DriverScheduleDetail{" +
                 "route=" + route +
                 ", round=" + round +
                 '}';
