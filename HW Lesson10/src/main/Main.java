@@ -48,13 +48,13 @@ public class Main {
         } while (true);
         switch (functionChoice) {
             case 1:
-                ProductService.display();
+                ProductService.add();
                 break;
             case 2:
                 ProductService.remove();
                 break;
             case 3:
-                ProductService.add();
+                ProductService.display();
                 break;
             case 4:
                 ProductService.findByName();
