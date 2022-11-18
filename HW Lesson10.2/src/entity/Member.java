@@ -9,6 +9,7 @@ public class Member implements Inputable {
     private String name;
     private LocalDate dob;
     private String job;
+    private static int autoId = 0;
 
     public int getId() {
         return id;
@@ -55,6 +56,8 @@ public class Member implements Inputable {
 
     @Override
     public void inputInfo() {
+        autoId++;
+        id = autoId;
         System.out.print("Enter name: ");
         name = new Scanner(System.in).next();
         System.out.print("Enter date of birth: ");

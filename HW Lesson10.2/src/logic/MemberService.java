@@ -24,9 +24,9 @@ public class MemberService implements Addable, Displayable {
     }
 
     public static void display() {
-        System.out.print("The updated member list: ");
+        System.out.println("The updated member list: ");
         for (Member member : Main.members) {
-            System.out.print(member + "\t");
+            System.out.println(member);
         }
     }
 }
