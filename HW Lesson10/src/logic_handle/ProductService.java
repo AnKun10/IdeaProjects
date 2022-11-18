@@ -166,7 +166,7 @@ public class ProductService implements Addable, Displayable, Findable, Removable
                 break;
         }
         for (Product temp : Main.products) {
-            if ((removeChoice == 1 && temp.getName().equals(name))||(removeChoice ==2 &&temp.getId()==id)) {
+            if ((removeChoice == 1 && temp.getName().equals(name)) || (removeChoice == 2 && temp.getId() == id)) {
                 Main.products.remove(temp);
             }
         }
