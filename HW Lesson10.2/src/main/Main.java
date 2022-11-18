@@ -10,13 +10,14 @@ public class Main {
     public static ArrayList<Member> members = new ArrayList<>();
 
     public static void main(String[] args) {
-        menu();
+        runMenu();
     }
 
     private static void runMenu() {
         while (true) {
-            MemberService.add();
-            MemberService.display();
+            displayMenu();
+            int functionChoice = choiceFunction();
+            logicFunction(functionChoice);
         }
     }
 
@@ -41,11 +42,13 @@ public class Main {
         return functionChoice;
     }
 
-    private static void logicFunction() {
-        switch (choiceFunction()) {
+    private static void logicFunction(int functionChoice) {
+        switch (functionChoice) {
             case 1:
+                MemberService.add();
                 break;
             case 2:
+                MemberService.display();
                 break;
             case 3:
                 System.exit(0);
