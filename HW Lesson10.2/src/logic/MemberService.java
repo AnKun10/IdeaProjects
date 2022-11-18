@@ -5,8 +5,8 @@ import main.Main;
 
 import java.util.Scanner;
 
-public class MemberService implements Addable,Displayable {
-    public static void add(){
+public class MemberService implements Addable, Displayable {
+    public static void add() {
         int membNumb;
         do {
             System.out.print("Enter number of new members (at least 3): ");
@@ -16,15 +16,17 @@ public class MemberService implements Addable,Displayable {
             }
             System.out.println("Invalid input, please try again!");
         } while (true);
-        for (Member member : Main.members) {
+        for (int i = 0; i < membNumb; i++) {
+            Member member = new Member();
             member.inputInfo();
             Main.members.add(member);
         }
     }
-    public static void display(){
+
+    public static void display() {
         System.out.print("The updated member list: ");
         for (Member member : Main.members) {
-            System.out.print(member+"\t");
+            System.out.print(member + "\t");
         }
     }
 }
