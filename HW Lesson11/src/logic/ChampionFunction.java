@@ -6,7 +6,8 @@ import main.Main;
 
 import java.util.Scanner;
 
-public class ChampionFunction {
+public class ChampionFunction implements Addable, Displayable{
+    //Create new Champion
     private Champion input(Scanner scanner) {
         Champion champion = new Champion();
         System.out.print("Enter name: ");
@@ -18,6 +19,7 @@ public class ChampionFunction {
         System.out.println("4, ADC");
         System.out.println("5, SUPPORT");
         System.out.println("**********************");
+        //Set position's value to Champion
         int positionChoice;
         do {
             System.out.print("Enter postion: ");
@@ -46,15 +48,30 @@ public class ChampionFunction {
         }
         return champion;
     }
-
+    //Add new Champions to Champions pool
+    @Override
     public void add(Scanner scanner){
-        System.out.println("#####################################");
-        System.out.println("Adding 5 new champions to the pool...");
-        for (int i = 0; i < 5; i++) {
+        int champNumb;
+        do {
+            System.out.print("Enter number of new Champions: ");
+            champNumb = Integer.parseInt(scanner.next());
+            if (champNumb>0){
+                break;
+            }
+            System.out.println("Invalid input, please try again!");
+        }while (true);
+        for (int i = 0; i < champNumb; i++) {
             Main.champions.add(input(scanner));
         }
-        System.out.println("#####################################");
     }
-
-    public void display(Scanner scanner)
+    //Display Champions
+    @Override
+    public void display(){
+        if (Main.champions.size()==0){
+            System.out.println("\tThere aren't any Champions yet!");
+        }
+        for (Champion champion : Main.champions) {
+            System.out.println("\t"+champion);
+        }
+    }
 }
