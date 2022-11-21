@@ -5,7 +5,7 @@ import main.Main;
 
 import java.util.Scanner;
 
-public class FollowerService {
+public class FollowerService implements Addable, Displayable {
     //Create new Follower
     private Follower input(Scanner scanner) {
         Follower follower = new Follower();
@@ -23,6 +23,8 @@ public class FollowerService {
         } while (true);
         return follower;
     }
+
+    @Override
     //Add new Followers to the Main Followers List
     public void add(Scanner scanner) {
         int followerNumb;
@@ -38,6 +40,8 @@ public class FollowerService {
             Main.followers.add(input(scanner));
         }
     }
+
+    @Override
     //Display all the Followers in Main Followers List
     public void display() {
         for (Follower follower : Main.followers) {

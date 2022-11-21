@@ -4,13 +4,15 @@ public class Champion {
     private int id;
     private String name;
     private String position;
+    private static int autoId = 0;
+
+    public Champion(){
+        autoId++;
+        this.id = autoId;
+    }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

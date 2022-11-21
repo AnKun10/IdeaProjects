@@ -7,7 +7,7 @@ public enum PositionConstant {
     ADC("ADC"),
     SUPPORT("SUPPORT");
 
-    private String value;
+    public String value;
 
     PositionConstant(String value) {
         this.value = value;

@@ -5,7 +5,7 @@ import main.Main;
 
 import java.util.Scanner;
 
-public class SongService {
+public class SongService implements Addable, Displayable {
     //Create new Song
     private Song input(Scanner scanner) {
         Song song = new Song();
@@ -15,6 +15,8 @@ public class SongService {
         song.setSinger(scanner.next());
         return song;
     }
+
+    @Override
     //Add new Songs to the Main Songs List
     public void add(Scanner scanner) {
         int songNumb;
@@ -30,6 +32,8 @@ public class SongService {
             Main.songs.add(input(scanner));
         }
     }
+
+    @Override
     //Display all the Songs in Main Songs List
     public void display() {
         for (Song song : Main.songs) {

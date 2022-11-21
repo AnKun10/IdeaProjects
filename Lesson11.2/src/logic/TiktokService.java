@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 import static main.Main.songs;
 
-public class TiktokService {
+public class TiktokService implements Addable,Displayable{
     //Create new Tiktok
     private Tiktok input(Scanner scanner) {
         Tiktok tiktok = new Tiktok();
@@ -98,7 +98,7 @@ public class TiktokService {
         }
         return idolsTemp;
     }
-
+    @Override
     //Add new Tiktoks to the Main Tiktoks List
     public void add(Scanner scanner) {
         int tiktokNumb;
@@ -114,7 +114,7 @@ public class TiktokService {
             Main.tiktoks.add(input(scanner));
         }
     }
-
+    @Override
     //Display all the Tiktoks in Main Tiktoks List
     public void display() {
         for (Tiktok tiktok : Main.tiktoks) {

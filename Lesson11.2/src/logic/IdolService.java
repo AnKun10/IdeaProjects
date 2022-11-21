@@ -7,7 +7,7 @@ import main.Main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class IdolService {
+public class IdolService implements Addable, Displayable {
     //Create new Idol
     private Idol input(Scanner scanner) {
         Idol idol = new Idol();
@@ -56,6 +56,7 @@ public class IdolService {
         return idol;
     }
 
+    @Override
     //Add new Idols to the Main Idols List
     public void add(Scanner scanner) {
         int idolNumb;
@@ -72,6 +73,7 @@ public class IdolService {
         }
     }
 
+    @Override
     //Display all the Idols in Main Idols List
     public void display() {
         for (Idol idol : Main.idols) {
