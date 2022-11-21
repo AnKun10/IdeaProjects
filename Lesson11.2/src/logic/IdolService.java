@@ -32,23 +32,22 @@ public class IdolService {
             //Find follower's id
             System.out.print("Enter the " + (i + 1) + " follower's id: ");
             int id = Integer.parseInt(scanner.next());
-            int repeatId = 0;
+            boolean hasFollower = false;
             for (Follower follower : Main.followers) {
                 if (follower.getId() == id) {
-                    followersTemp.add(follower);
-                    repeatId++;
-                }
-                //User try to Add > 1 of the Same Follower
-                if (repeatId > 1) {
-                    for (int j = 0; j < repeatId; j++) {
-                        followersTemp.remove(follower);
+                    hasFollower = true;
+                    //User try to Add > 1 of the Same Follower
+                    if (followersTemp.contains(follower)) {
+                        System.out.println("This idol already has this follower's id, please try again!");
+                        i--;
+                        break;
                     }
-                    System.out.println("This idol already has this follower's id, please try again!");
-                    i--;
+                    //User successfully Add Follower
+                    followersTemp.add(follower);
                 }
             }
             //User try to Add None Exiting Follower
-            if (repeatId < 1) {
+            if (!hasFollower) {
                 System.out.println("There aren't any follower with this id in the data, please try again!");
                 i--;
             }
